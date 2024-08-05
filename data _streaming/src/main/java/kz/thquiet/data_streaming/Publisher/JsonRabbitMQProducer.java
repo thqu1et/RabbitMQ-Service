@@ -47,7 +47,6 @@ public class JsonRabbitMQProducer {
 
     public void sendJsonPerson() throws JsonProcessingException {
         List<PersonsEntity> persons = repository.findAll();
-        ObjectMapper objectMapper = new ObjectMapper();
         List<PersonsDTO> dtos = persons.stream()
                 .map(this::convert)
                 .collect(Collectors.toList())
